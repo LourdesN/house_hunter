@@ -9,8 +9,14 @@
     <link rel="stylesheet" href="{% static 'css/form.css' %}">
 </head>
 <body>
+
     <form method="post">
-        <h2 class="logo">House Hunter Haven</h2>
+        {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+        <h2 class="logo"><a href=" ">House Hunter Haven</a></h2>
         <h1 class="title">Apartment Listing Form</h1>
         {% csrf_token %}
         {{ form.as_p }}

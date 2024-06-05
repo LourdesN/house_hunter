@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties</title>
+    <style>
+        body {
+            font-family: Georgia;
+            background-color: black;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-top: 2%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #ddd;
+            font-size: 18px;
+        }
+        th, td {
+            border: 1px solid #2e2e2e;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #32a6d5;
+            color: black;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        img {
+            width: 70%;
+            height: 70%;
+        }
+        .tour{
+            background-color:  #32a6d5;
+            border-radius: 4px;
+            width: 150px;
+            height: 50px;
+            font-size: 17px;
+            font-family: Georgia;
+            cursor: pointer;
+            border: none;
+        }
+        .back{
+            float: right;
+            background-color:  #32a6d5;
+            border-radius: 4px;
+            width: 100px;
+            height: 50px;
+            font-size: 17px;
+            font-family: Georgia;
+            margin-bottom: 2%;
+            cursor: pointer;
+            border: none;
+        }
+        .tour:hover,.back:hover{
+            background-color: #37b8eb;
+        }
+    </style>
+</head>
+<body>
+
+{% block content %}
+  <h1>Available Apartments</h1> 
+ <button class="back">Back</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th> 
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Location</th>
+        <th>For Sale</th>
+        <th>For Rent</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for apartment in apartments %}
+      <tr>
+        <td><img src="{{ apartment.image.url }}" alt="{{ apartment.title }}" width="100"></td> 
+        <td>{{ apartment.title }}</td>
+        <td>{{ apartment.description }}</td>
+        <td>{{ apartment.price }}</td>
+        <td>{{ apartment.location }}</td>
+        <td>{{ apartment.is_for_sale }}</td>
+        <td>{{ apartment.is_for_rent }}</td>
+        <td> <button class="tour">Request a Tour</button></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+</body>
+</html>
