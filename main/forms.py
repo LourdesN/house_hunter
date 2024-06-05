@@ -8,7 +8,7 @@ class ApartmentListingForm(forms.ModelForm):
         labels = {
             'title': 'Title',
             'description': 'Description',
-            'price': 'Price ($)',
+            'price': 'Price (shs)',
             'location': 'Location',
             'is_for_sale': 'For Sale',
             'is_for_rent': 'For Rent',
