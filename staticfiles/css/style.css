@@ -1,0 +1,461 @@
+body{
+    background-color: black;
+    margin: 0;
+}
+
+/* navbar styling */
+.navbar{
+    background-color: #090909;
+    overflow: hidden;
+    position: fixed; 
+    top: 0;
+    width: 100%; 
+    height: 8%;
+    padding-top: 0.8%;
+    padding-bottom: 0.5%;
+  z-index: 1;
+}
+
+ /* Links inside the navbar*/ 
+ .navbar a{
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 13px;
+    text-decoration: none;
+    justify-self: end;
+    }
+    
+    .navbar a:hover {
+    color: #32a6d5;
+    }
+
+    .navbar .logo{
+    float: left;
+    font-family: Copperplate, Papyrus, fantasy ;
+    font-size: 1.35em
+    } 
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .navbar .icon{
+        display: none;
+      }
+
+  
+    @media screen and (max-width: 600px) {
+        .navbar a:not(:first-child) {display: none;}
+        .navbar a.icon {
+          float: right;
+          display: block;
+        }
+      }
+    @media screen and (max-width: 600px) {
+        .navbar.responsive {position: relative;}
+        .navbar.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .navbar.responsive a {
+          float: none;
+          display: block;
+          text-align: center;
+        }
+        .navbar a {
+            text-align: center;
+            display: block;
+        }
+      }
+
+ /* homepage */
+.section-container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+.section-header {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+.header-container {
+  padding-top: 4.5rem;
+}
+.header-image-container {
+  position: relative;
+  min-height: 500px;
+  background-image: linear-gradient(to right, rgba(44, 56, 85, 0.9), rgba(100, 125, 187, 0.1)), url(../images/apartment.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+}
+.header-image-container .header-content {
+  max-width: 600px;
+  padding: 3rem 2rem;
+}
+.header-image-container .header-content h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  font-weight: 600;
+  color: black;
+  margin-top: 1%;
+}
+.header-image-container .header-content p {
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* search container */
+
+.booking-container {
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 6rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+}
+.booking-container form {
+  width: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.booking-container form .form-group .input-group {
+  position: relative;
+  width: 100%;
+}
+.booking-container form .form-group .input-group input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid black;
+  color: black;
+}
+.booking-container form .form-group .input-group label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  pointer-events: none;
+  transition: .5s;
+}
+.booking-container form .form-group .input-group input:focus ~ label{
+  font-size: 0.8rem;
+  top: 0;
+}
+.booking-container form .form-group p {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+.header-image-container .booking-container .btn {
+width: 50px;
+height: 50px;
+outline: none;
+border: none;
+font-size: 1.5rem;
+color: white;
+background: black;
+border-radius: 50%;
+cursor: pointer;
+transition: .5s;
+}
+.header-image-container .booking-container .btn:hover {
+background: gray;
+}
+.reveal {
+position: relative;
+transform: translateY(100px);
+opacity: 0;
+transition: 2s ease;
+transition-property: transform, opacity;
+}
+.reveal.active {
+transform: translateY(0px);
+opacity: 1;
+}
+
+  /* apartment styling */
+.column {
+    float: left;
+    width: 25%;
+  }
+ 
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  #Properties{
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 5%;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .flip-box-inner{
+        width: 300px;
+        height: 200px;
+        margin-left: 4%;
+    }
+    #Properties{
+      margin-top: 5%;
+    }
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(154, 65, 65, 0.2);
+    padding: 13px;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin-left: 7%;
+    margin-right: 5%;
+  }
+  .card img{
+    width: 205px;
+  }
+
+.flip-box {
+    background-color: transparent;
+    width: 205px;
+    height: 130px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+    margin-left: 7%;
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box of the images container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-box-back {
+    color: white;
+    transform: rotateY(180deg);
+  }
+  @media only screen and (max-width: 768px){
+    .flip-box-inner{
+        width: 300px;
+        height: 200px;
+        margin-left: 3%;
+    }
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+    
+  }
+  @media only screen and (width: 768px){
+    .row{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+  }
+
+  /* testimonials styling */
+  .client h2{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 2%;
+  }
+
+.client .client-grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+.client .client-grid .client-card {
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px rgba(174, 161, 161, 0.861);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: .5s;
+}
+.client .client-grid .client-card:hover {
+    box-shadow: none;
+}
+.client .client-grid .client-card img {
+    width:80px;
+    margin-left: 25%;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    height: 90px;
+}
+.client .client-grid .client-card p {
+    color: black;
+    text-align: center;
+}
+
+   /* footer styling */
+   .footer {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    margin-top: 4%;
+  }
+  
+  .footer .heading {
+    max-width: 1010px;
+    width: 90%;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    font-family: Copperplate, Papyrus, fantasy ;
+    color: #32a6d5;
+  }
+  
+  .footer .content {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+  }
+  
+  .footer .content p {
+    margin-bottom: 1.3rem;
+    color: white;
+  }
+  
+  .footer .content a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .footer .content a:hover {
+    color: #32a6d5;
+  }
+  
+  .footer .content h4 {
+    margin-bottom: 1rem;
+    font-size: 19px;
+    color: #32a6d5;
+    
+  }
+  
+  footer {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: aliceblue;
+  }
+  
+  footer hr {
+    margin: 0.5rem 0;
+    color: aliceblue;
+  }
+  
+  @media (max-width: 767px) {
+    .footer .content {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+    }
+  
+    .footer {
+      position: unset;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .footer .content,
+    .footer {
+      font-size: 14px;
+    }
+  }
+  
+  @media (orientation: landscape) and (max-height: 500px) {
+    .footer {
+      position: unset;
+    }
+  }
+
+
+@media (width<900px) {
+ .booking-container form {
+       grid-template-columns: repeat(3, 1fr);
+   }
+   .booking-container{
+    margin-top: 0;
+   }
+   .client .client-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+.card{
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+@media (width<600px) {
+ 
+.header-container {
+    padding-bottom: 25rem;
+}
+.header-image-container .booking-container {
+    flex-direction: column;
+    bottom: -20rem;
+}
+.header-image-container .booking-container form {
+    grid-template-columns: repeat(1, 1fr);
+}
+.client .client-grid {
+  grid-template-columns: repeat(1, 1fr);
+}
+}
+@media only screen and (max-width: 768px){
+  .booking-container{
+    bottom: -1rem;
+  }
+}
